@@ -16,3 +16,14 @@ add tailwind
  # NetFlix Gpt
    -search bar
    -movie suggestions
+
+
+
+
+
+
+
+
+
+   # Routing 
+   -installed react-router-dom
