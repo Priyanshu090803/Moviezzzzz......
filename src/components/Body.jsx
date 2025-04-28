@@ -11,8 +11,7 @@ import { addUser, removeUser } from '../utils/userSlice'
 
 const Body = () => {
   const dispatch = useDispatch();
-  const navigate = useNavigate()
-
+ 
   const appRouter= createBrowserRouter(
     [
       {
@@ -29,22 +28,24 @@ const Body = () => {
     onAuthStateChanged(auth, (user) => {       // login, signup , logout teeno m se kuch bhi hoga to redux store update krnge ek jgh se
                                                // agr onAuthStateChanged() use nhi krenge to bhot sare logic likhne pdenge redux store ko update knre k liye
       if (user) {
-        const {uid,email,displayName} = user;
+        const {uid,email,displayName, photoURL} = user;
 
-        dispatch(addUser({uid: uid , email: email, displayName: displayName}))
-        navigate('/browse')
+        dispatch(addUser({
+            uid: uid ,
+            email: email,
+            displayName: displayName ,
+            photoURL:photoURL}))
       } else {
 
         dispatch(removeUser())
-        navigate("/")           // if user signout then we put it to main page
       }
     });
   },[])
 
   return (
     <div>
-  
-      <RouterProvider router={appRouter} />         // providing routes
+      
+      <RouterProvider router={appRouter} />         {/* providing routes*/}
 
     </div>
   )

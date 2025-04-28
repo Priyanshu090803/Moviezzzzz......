@@ -12,6 +12,7 @@ add tailwind
    -Deploying app to production
    -Login and SignUp to fireBase
    -Storing LoggedIn data To redux store
+   -Implemented signout 
  # Browse (after authentication)
   -Header
   -MainMovie

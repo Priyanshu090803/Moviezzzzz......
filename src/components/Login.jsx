@@ -2,15 +2,17 @@ import React, {  useRef, useState } from 'react'
 import Header from './Header'
 import {doValidation} from "../utils/Validate"
 import {auth} from "../utils/firebase"         // auth ko laenge  bar bar bnane se achha ek jgh bna k import kro
-import { createUserWithEmailAndPassword,signInWithEmailAndPassword  } from "firebase/auth";
+import { createUserWithEmailAndPassword,signInWithEmailAndPassword, updateProfile  } from "firebase/auth";
+import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 
 
 
 const Login = () => {
   const[isSignIn, setisSignIn] = useState(true);       // usestate se toggle karwa denge signin se sign up tak
   const [errorMsg,SeterrorMsg] =useState(null) ;     // agr password ya email wrong hoga to bhjenge ye or SHI HOGA TO NI DIKHEGA ERROR
-
-
+  const navigate = useNavigate()
+  const dispatch = useDispatch()
 
   const email = useRef(null)      // useref ka use krre h   email or password k input k refrence k liye
   const password = useRef(null)
@@ -35,11 +37,39 @@ const Login = () => {
     // sign up logic
 
     createUserWithEmailAndPassword(auth, email.current.value, password.current.value) // from firebase docs
-  .then((userCredential) => {
+    .then((userCredential) => {
     // Signed up 
-    const user = userCredential.user;
+    const user = userCredential.user;  // once user created then update profile 
+
+
+    // ye part bhi docs se liya h      // Ye second render lera and email password phle usme hi render hore h to yha se hi dispatch kr denge ise
+    updateProfile(user, {
+      displayName: fname.current.value+lname.current.value,
+       photoURL: "https://avatars.githubusercontent.com/u/156987012?s=400&u=a002bb17e2fc9c23f0939915b1f1715fa8535402&v=4"
+    }).then(() => {
+      // Profile updated!
+      
+       const {uid,email,displayName, photoURL} = auth.currentUser;         // upr user se ni krenge bcz it is not updated , auth.curruseris updated
+      
+              dispatch(addUser({
+                  uid: uid ,
+                  email: email,
+                  displayName: displayName ,      // by this step user will update in first render
+                  photoURL:photoURL}))           // copied from body
+      
+    navigate("/browse")
+
+      // ...
+    }).catch((error) => {
+      // An error occurred
+      SeterrorMsg(error.message)
+      // ...
+    });
     // ...
+
     console.log(user)
+    // navigate from here
+
   })
   .catch((error) => {
     const errorCode = error.code;
@@ -48,6 +78,7 @@ const Login = () => {
     SeterrorMsg(errorCode +""+ errorMessage)
 
   });
+
    }
    
    else{
@@ -59,7 +90,10 @@ const Login = () => {
     const user = userCredential.user;
     // ...
     console.log(user)
+    // navigate logic
+    navigate("/browse")
   })
+  
   .catch((error) => {
     const errorCode = error.code;
     const errorMessage = error.message;
