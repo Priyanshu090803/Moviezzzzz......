@@ -13,6 +13,7 @@ add tailwind
    -Login and SignUp to fireBase
    -Storing LoggedIn data To redux store
    -Implemented signout 
+   -Bugfix:SignUp user display name and profile pic update and proper routing from header
  # Browse (after authentication)
   -Header
   -MainMovie

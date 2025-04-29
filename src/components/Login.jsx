@@ -3,7 +3,6 @@ import Header from './Header'
 import {doValidation} from "../utils/Validate"
 import {auth} from "../utils/firebase"         // auth ko laenge  bar bar bnane se achha ek jgh bna k import kro
 import { createUserWithEmailAndPassword,signInWithEmailAndPassword, updateProfile  } from "firebase/auth";
-import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 
 
@@ -11,7 +10,6 @@ import { useDispatch } from 'react-redux';
 const Login = () => {
   const[isSignIn, setisSignIn] = useState(true);       // usestate se toggle karwa denge signin se sign up tak
   const [errorMsg,SeterrorMsg] =useState(null) ;     // agr password ya email wrong hoga to bhjenge ye or SHI HOGA TO NI DIKHEGA ERROR
-  const navigate = useNavigate()
   const dispatch = useDispatch()
 
   const email = useRef(null)      // useref ka use krre h   email or password k input k refrence k liye
@@ -57,7 +55,6 @@ const Login = () => {
                   displayName: displayName ,      // by this step user will update in first render
                   photoURL:photoURL}))           // copied from body
       
-    navigate("/browse")
 
       // ...
     }).catch((error) => {
@@ -67,8 +64,6 @@ const Login = () => {
     });
     // ...
 
-    console.log(user)
-    // navigate from here
 
   })
   .catch((error) => {
@@ -90,8 +85,6 @@ const Login = () => {
     const user = userCredential.user;
     // ...
     console.log(user)
-    // navigate logic
-    navigate("/browse")
   })
   
   .catch((error) => {
@@ -113,18 +106,18 @@ const Login = () => {
   }
 
   return (
-    <div className=' w-full h-full'>
+    <div className=' w-full h-[890px] overflow-hidden'>
       <Header/>
-      <div className=' relative h-full'>
+      <div className='   h-full w-full relative flex  items-center justify-center'>
         <img src='https://assets.nflxext.com/ffe/siteui/vlv3/69bec183-9cc8-49d4-8fc2-08228d3c91b4/web/IN-en-20250414-TRIFECTA-perspective_c8273fb1-8860-4ff5-bd1c-c2c4b44d5f2a_large.jpg' alt='login-img'
-        className=' h-full w-full'/>
+        className=' h-full w-full absolute -z-30'/>
       
        <form
        
        onSubmit={(e)=>e.preventDefault()}
        
-        className=' absolute w-[450px]  min-h-fit top-28 rounded-lg   left-3/8 gap-6 text-white flex flex-col px-16 py-14 bg-black/80	'>
-        <h1 className=' font-semibold  text-4xl mb-6'>{isSignIn?"Sign In":"Sign up"}</h1> 
+        className='  md:w-[450px]  min-h-fit top-28 rounded-lg left-2/8  md:left-3/8 gap-6 text-white flex flex-col px-16 py-14 bg-black/80	'>
+        <h1 className=' font-semibold  text-4xl mb-6 transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:transform-none  '>{isSignIn?"Sign In":"Sign up"}</h1> 
        
         {!isSignIn&&(
          <> 
