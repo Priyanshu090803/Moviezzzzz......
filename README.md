@@ -14,6 +14,17 @@ add tailwind
    -Storing LoggedIn data To redux store
    -Implemented signout 
    -Bugfix:SignUp user display name and profile pic update and proper routing from header
+   -Unsubscribe to onauthstatechange
+   -Added hardcoded values to the constant files
+   -Regestered tmdb and make api call
+   -Custom hooks for tmdb
+   -Create movie slice
+   -Updating movie slice with data
+   -Planning the MainContainer and secondary container
+   -Fetch data for Trailer
+   -Update store for Trailer video data
+   -Embedded the yt video and make it autoplay and mute
+   
  # Browse (after authentication)
   -Header
   -MainMovie
@@ -27,6 +38,14 @@ add tailwind
 
 
 
+
+ # Browse page ui
+ -Main container
+   -video background  
+   -video title
+  -Secondary container
+   - Movie List *n
+   - Card *n
 
 
 

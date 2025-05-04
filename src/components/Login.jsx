@@ -4,7 +4,7 @@ import {doValidation} from "../utils/Validate"
 import {auth} from "../utils/firebase"         // auth ko laenge  bar bar bnane se achha ek jgh bna k import kro
 import { createUserWithEmailAndPassword,signInWithEmailAndPassword, updateProfile  } from "firebase/auth";
 import { useDispatch } from 'react-redux';
-
+import { USER_IMG ,LOGIN_BG_IMG } from '../utils/constants';
 
 
 const Login = () => {
@@ -43,7 +43,7 @@ const Login = () => {
     // ye part bhi docs se liya h      // Ye second render lera and email password phle usme hi render hore h to yha se hi dispatch kr denge ise
     updateProfile(user, {
       displayName: fname.current.value+lname.current.value,
-       photoURL: "https://avatars.githubusercontent.com/u/156987012?s=400&u=a002bb17e2fc9c23f0939915b1f1715fa8535402&v=4"
+       photoURL:USER_IMG
     }).then(() => {
       // Profile updated!
       
@@ -109,7 +109,7 @@ const Login = () => {
     <div className=' w-full h-[890px] overflow-hidden'>
       <Header/>
       <div className='   h-full w-full relative flex  items-center justify-center'>
-        <img src='https://assets.nflxext.com/ffe/siteui/vlv3/69bec183-9cc8-49d4-8fc2-08228d3c91b4/web/IN-en-20250414-TRIFECTA-perspective_c8273fb1-8860-4ff5-bd1c-c2c4b44d5f2a_large.jpg' alt='login-img'
+        <img src={LOGIN_BG_IMG} alt='login-img'
         className=' h-full w-full absolute -z-30'/>
       
        <form
