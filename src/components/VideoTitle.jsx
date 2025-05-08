@@ -5,7 +5,7 @@ import { Info } from "lucide-react";
 
 const VideoTitle = ({title,overview}) => {
   return (
-    <div className=' z-30 w-2/3 md:w-1/2  flex flex-col absolute top-80 md:pl-32 sm:pl-10 pl-8 gap-3   pt-48 md:pt-36 sm:pt-48 '>
+    <div className=' z-30 w-2/3 md:w-1/2  flex flex-col absolute top-80 md:pl-40 sm:pl-10 pl-8 gap-3   pt-48 md:pt-28 sm:pt-48 '>
       <motion.h1 className=' md:text-3xl text-xl font-black uppercase text-green-500'
       initial={{opacity:0,y:-40}}
       whileHover={{ scale: 1.02 }}

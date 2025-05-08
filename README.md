@@ -24,6 +24,11 @@ add tailwind
    -Fetch data for Trailer
    -Update store for Trailer video data
    -Embedded the yt video and make it autoplay and mute
+   -Build secondary container
+   -Build movie list 
+   -Build movie card
+   -Tmdb image cdn url
+   -Custom hooks for different api's
    
  # Browse (after authentication)
   -Header
