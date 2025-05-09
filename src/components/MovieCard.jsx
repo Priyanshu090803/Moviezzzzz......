@@ -1,9 +1,11 @@
 import React from 'react'
 import { IMG_CDN_URL } from '../utils/constants'
+import { motion } from 'motion/react'
 
 const MovieCard = ({poster_path}) => {
   return (
-    <div className=' w-40 mr-10'>
+    <motion.div className=' w-40 mr-10 '
+    whileHover={{ scale: 0.9 }}>
       <img 
       className=''
       alt='movie-card'
@@ -11,7 +13,7 @@ const MovieCard = ({poster_path}) => {
       >
 
       </img>
-    </div>
+    </motion.div>
   )
 }
 

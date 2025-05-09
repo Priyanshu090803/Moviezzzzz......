@@ -4,7 +4,7 @@ import {doValidation} from "../utils/Validate"
 import {auth} from "../utils/firebase"         // auth ko laenge  bar bar bnane se achha ek jgh bna k import kro
 import { createUserWithEmailAndPassword,signInWithEmailAndPassword, updateProfile  } from "firebase/auth";
 import { useDispatch } from 'react-redux';
-import { USER_IMG ,LOGIN_BG_IMG } from '../utils/constants';
+import { USER_IMG ,BG_IMG } from '../utils/constants';
 
 
 const Login = () => {
@@ -109,7 +109,7 @@ const Login = () => {
     <div className=' w-full h-[890px] overflow-hidden'>
       <Header/>
       <div className='   h-full w-full relative flex  items-center justify-center'>
-        <img src={LOGIN_BG_IMG} alt='login-img'
+        <img src={BG_IMG} alt='login-img'
         className=' h-full w-full absolute -z-30'/>
       
        <form

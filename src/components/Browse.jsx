@@ -6,8 +6,11 @@ import useNowPlayingMovie from '../Hooks/useNowPlayingMovie';
 import usePopularMovies from '../Hooks/usePopularMovies';
 import useTopRated from '../Hooks/useTopRated';
 import useUpcoming from '../Hooks/useUpcoming';
+import GptSearch from './GptSearch';
+import { useSelector } from 'react-redux';
 
 const Browse = () => {
+  const showGptSearch = useSelector((store)=>store.gpt.showGptSearch)
 
   // Fetching data from tmdb and updating state
   useNowPlayingMovie()
@@ -15,10 +18,15 @@ const Browse = () => {
   useTopRated()
   useUpcoming()
 return (
-    <div className=' w-screen'>
+    <div className=' w-screen overflow-x-hidden'>
       <Header/>
-      <Maincontainer/>
-      <SecondaryContainer/>
+      {
+        showGptSearch?(<GptSearch/>):(<>
+          <Maincontainer/>
+          <SecondaryContainer/>
+          </>)
+      }
+ 
     </div>
   )
 }

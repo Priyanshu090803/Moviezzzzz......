@@ -7,11 +7,16 @@ import { motion } from 'motion/react';
 import { button } from 'motion/react-client';
 import { addUser, removeUser } from '../utils/userSlice'
 import { LOGO, USER_IMG } from '../utils/constants';
+import { toggleGptSearchView } from '../utils/gptSlice';
 
 const Header = () => {
   const navigate = useNavigate()
   const dispatch =useDispatch()
   const user = useSelector(store=> store.user)  // suscribing to store
+  const showGptSearch = useSelector((store)=>store.gpt.showGptSearch)
+  const handleGpt =()=>{
+    dispatch(toggleGptSearchView())
+  }
 
   const handleSignOut =()=>{
     signOut(auth).then(() => {
@@ -74,12 +79,20 @@ const Header = () => {
       <img className=' w-24 sm:w-26 h-full md:w-26 md:ml-20 ml-6 mt-4 transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:transform-none hover:scale-110'
        src={LOGO} alt='logo'/>
     {user && <div className=' flex gap-1 items-center'>
+      <motion.button
+      onClick={handleGpt}
+      whileHover={{opacity:0.5}}
+      className=' bg-blue-900 font-bold text-gray-400 cursor-pointer shadow-2xl bg-gradient-to-r from-blue-950 to-blue-400 hover:bg-gradient-to-t hover:from-blue-400 transition-all hover:scale-95 hover:to-blue-950 px-2 py-2 rounded-lg mr-6'>
+        {showGptSearch?"Home":"Gpt Search"}
+      </motion.button>
       <img 
       className=' w-10 h-10 rounded-xl cursor-pointer '
       src={USER_IMG}
       alt='user-icon'
       />
+     
       <motion.button 
+      whileHover={{opacity:0.5}}
       key={button.id}
       initial={{opacity:1,x:0}}
       exit={{opacity:0,
@@ -88,8 +101,9 @@ const Header = () => {
           duration:0.3,
           ease: "easeOut"
         }
+      
       }}
-      className='  h-10 rounded-lg px-2 font-bold text-neutral-500  bg-black shadow-[0px_1px_2px_0px_rgba(255,255,255,0.1)_inset,0px_-1px_2px_0px_rgba(255,255,255,0.1)_inset] cursor-pointer
+      className='  h-10 rounded-lg px-2 font-bold text-neutral-500 bg-black shadow-[0px_1px_2px_0px_rgba(255,255,255,0.1)_inset,0px_-1px_2px_0px_rgba(255,255,255,0.1)_inset] cursor-pointer
        '
        onClick={handleSignOut}
        >SignOut</motion.button>
