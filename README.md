@@ -29,6 +29,7 @@ add tailwind
    -Build movie card
    -Tmdb image cdn url
    -Custom hooks for different api's
+   -Multi language in our app
    
  # Browse (after authentication)
   -Header

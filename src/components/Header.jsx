@@ -6,8 +6,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import { motion } from 'motion/react';
 import { button } from 'motion/react-client';
 import { addUser, removeUser } from '../utils/userSlice'
-import { LOGO, USER_IMG } from '../utils/constants';
+import { LOGO, SUPPORTED_LANGUAGES, USER_IMG } from '../utils/constants';
 import { toggleGptSearchView } from '../utils/gptSlice';
+import { changeLanguage } from '../utils/configSlice';
 
 const Header = () => {
   const navigate = useNavigate()
@@ -18,6 +19,9 @@ const Header = () => {
     dispatch(toggleGptSearchView())
   }
 
+  const handleLanguageChange=(e)=>{
+    dispatch(changeLanguage(e.target.value))
+  }
   const handleSignOut =()=>{
     signOut(auth).then(() => {
       // Sign-out successful.
@@ -76,9 +80,15 @@ const Header = () => {
 
   return (
     <div className=' z-50 absolute h-26 w-full md:px-20 px-3 py-3 bg-gradient-to-b from-black flex justify-between items-center'>
-      <img className=' w-24 sm:w-26 h-full md:w-26 md:ml-20 ml-6 mt-4 transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:transform-none hover:scale-110'
+      <img className=' w-24 sm:w-26 h-full md:w-26 md:ml-20 ml-6 mt-4 transition transform motion-reduce:transition-none motion-reduce:transform-none hover:scale-95 hover:opacity-80'
        src={LOGO} alt='logo'/>
     {user && <div className=' flex gap-1 items-center'>
+      {showGptSearch&&<select 
+      onChange={handleLanguageChange}
+      className='  bg-gradient-to-r from-rose-300 to-blue-100 text-neutral-500 hover:scale-95 transition-all hover:opacity-65 focus:opacity-65 focus:scale-95 font-semibold mr-5 rounded-lg py-1 px-2 opacity-80 cursor-pointer  outline-0'>
+        {SUPPORTED_LANGUAGES.map((lang)=><option key={lang.indentifier} value={lang.indentifier}>{lang.name}</option>)}
+        
+      </select>}
       <motion.button
       onClick={handleGpt}
       whileHover={{opacity:0.5}}
@@ -86,7 +96,7 @@ const Header = () => {
         {showGptSearch?"Home":"Gpt Search"}
       </motion.button>
       <img 
-      className=' w-10 h-10 rounded-xl cursor-pointer '
+      className=' w-10 h-10 rounded-xl cursor-pointer  hover:opacity-55 hover:scale-95 transition-all'
       src={USER_IMG}
       alt='user-icon'
       />
