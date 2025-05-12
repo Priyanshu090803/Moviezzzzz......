@@ -25,7 +25,7 @@ const Login = () => {
    )   // ye functionality dusre page m bnai h
 
    SeterrorMsg(message)
-   console.log(message)     // console.log mai null aye to smj jana shi h sab
+      // console.log mai null aye to smj jana shi h sab
    
    if(message) return;
 
@@ -84,7 +84,6 @@ const Login = () => {
     // Signed in 
     const user = userCredential.user;
     // ...
-    console.log(user)
   })
   
   .catch((error) => {

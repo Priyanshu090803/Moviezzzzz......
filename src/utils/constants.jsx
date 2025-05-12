@@ -30,3 +30,5 @@ export const SUPPORTED_LANGUAGES=[
     {indentifier:"hindi",name:"Hindi"}
     
 ]
+
+export const GEMINI_API_KEY="AIzaSyCXPFd2Q6pXXrAdKPtHs6xlPvRr95aSysw"
