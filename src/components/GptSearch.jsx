@@ -7,8 +7,9 @@ const GptSearch = () => {
   return (
     <div className=''>
         <div className=' absolute -z-20 ' >
-          <div className=' w-full h-screen bg-black  absolute opacity-40'></div>
+          <div className=' w-full min-h-screen bg-black  absolute opacity-40'></div>
             <img 
+            className=' w-full min-h-screen'
             src={BG_IMG}
             />
         </div>

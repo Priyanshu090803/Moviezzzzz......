@@ -6,9 +6,9 @@ import { addTopRated} from '../utils/movieSlice';
 const useTopRated = () => {
         // Fetching data from tmdb and updating state
     const dispatch = useDispatch();
-
+    const topRated = useSelector(store=> store.movies.topRated)
   useEffect(()=>{
-    getTopRated()
+   !topRated && getTopRated()
   },[])
   const getTopRated = async ()=>{
     const data= await  fetch('https://api.themoviedb.org/3/movie/top_rated?page=1',API_OPTIONS);
