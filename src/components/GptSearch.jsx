@@ -5,9 +5,9 @@ import { BG_IMG } from '../utils/constants'
 
 const GptSearch = () => {
   return (
-    <div className=''>
-        <div className=' absolute -z-20 ' >
-          <div className=' w-full min-h-screen bg-black  absolute opacity-40'></div>
+    <div className='  w-full'>
+        <div className=' absolute -z-20 w-full' >
+          <div className=' w-full  bg-black  absolute opacity-40'></div>
             <img 
             className=' w-full min-h-screen'
             src={BG_IMG}

@@ -36,7 +36,7 @@ const GptInput = () => {
     }
 
   return (
-    <div className=' absolute top-[20%] w-full  '>
+    <div className=' absolute top-[20%] w-full   '>
         <form className='flex justify-center gap-3'
         onSubmit={(e)=>e.preventDefault()}
         >

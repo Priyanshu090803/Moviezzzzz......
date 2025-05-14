@@ -79,8 +79,8 @@ const Header = () => {
   },[])
 
   return (
-    <div className=' z-50 absolute h-26 w-full md:px-20 px-3 py-3 bg-gradient-to-b from-black flex justify-between items-center'>
-      <img className=' w-24 sm:w-26 h-full md:w-26 md:ml-20 ml-6 mt-4 transition transform motion-reduce:transition-none motion-reduce:transform-none hover:scale-95 hover:opacity-80'
+    <div className=' z-50 absolute h-26 w-full md:px-20 px-3 py-5 bg-gradient-to-b from-black flex justify-between items-center'>
+      <img className=' w-20 sm:w-26 h-full md:w-20 md:ml-20 ml-6 mt-4 transition transform motion-reduce:transition-none motion-reduce:transform-none hover:scale-90 hover:opacity-80'
        src={LOGO} alt='logo'/>
     {user && <div className=' flex gap-1 items-center'>
       {showGptSearch&&<select 

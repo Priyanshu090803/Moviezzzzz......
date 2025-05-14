@@ -18,7 +18,7 @@ const Browse = () => {
   useTopRated()
   useUpcoming()
 return (
-    <div className=' w-screen overflow-x-hidden'>
+    <div className=' w-full overflow-x-hidden'>
       <Header/>
       {
         showGptSearch?(<GptSearch/>):(<>
