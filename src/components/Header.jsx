@@ -79,24 +79,24 @@ const Header = () => {
   },[])
 
   return (
-    <div className=' z-50 absolute h-26 w-full md:px-20 px-3 py-5 bg-gradient-to-b from-black flex justify-between items-center'>
-      <img className=' w-20 sm:w-26 h-10 md:w-24 md:ml-20 ml-6  transition transform motion-reduce:transition-none motion-reduce:transform-none hover:scale-90 opacity-80 hover:opacity-50'
+    <div className=' z-50 absolute h-26 w-full md:px-20 px-2 py-5 bg-gradient-to-b from-black flex justify-between items-center'>
+      <img className=' w-16 rounded-lg sm:w-20 h-8 md:h-10 md:w-20 md:ml-20 ml-2  transition transform motion-reduce:transition-none motion-reduce:transform-none hover:scale-90 opacity-80 hover:opacity-50'
        src={LOGO} alt='logo'/>
     {user && <div className=' flex gap-1 items-center'>
       {showGptSearch&&<select 
       onChange={handleLanguageChange}
-      className='  bg-gradient-to-r from-rose-300 to-blue-100 text-neutral-500 hover:scale-95 transition-all hover:opacity-65 focus:opacity-65 focus:scale-95 font-semibold mr-5 rounded-lg py-1 px-2 opacity-80 cursor-pointer  outline-0'>
+      className='  bg-gradient-to-r from-rose-300 to-blue-100 text-neutral-500 hover:scale-95 transition-all hover:opacity-65 focus:opacity-65 scale-90 md:scale-100 focus:scale-95 font-semibold md:mr-5 mr-2 rounded-lg py-1 md:px-2 opacity-80 cursor-pointer  outline-0'>
         {SUPPORTED_LANGUAGES.map((lang)=><option key={lang.indentifier} value={lang.indentifier}>{lang.name}</option>)}
         
       </select>}
       <motion.button
       onClick={handleGpt}
       whileHover={{opacity:0.5}}
-      className=' bg-blue-900 font-bold text-gray-400 cursor-pointer shadow-2xl bg-gradient-to-r from-blue-950 to-blue-400 hover:bg-gradient-to-t hover:from-blue-400 transition-all hover:scale-95 hover:to-blue-950 px-2 py-2 rounded-lg mr-6'>
+      className=' bg-blue-900 font-bold text-gray-400 cursor-pointer shadow-2xl bg-gradient-to-r from-blue-950 to-blue-400 hover:bg-gradient-to-t hover:from-blue-400 transition-all hover:scale-80 md:hover:scale-95  scale-95 md:scale-100 hover:to-blue-950 md:px-2 md:py-2 px-1 py-1 rounded-lg md:mr-6 mr-1'>
         {showGptSearch?"Home":"Gpt Search"}
       </motion.button>
       <img 
-      className=' w-10 h-10 rounded-xl cursor-pointer  hover:opacity-55 hover:scale-95 transition-all'
+      className=' w-10 h-10 rounded-xl cursor-pointer  hover:opacity-55 md:hover:scale-95 md:scale-100 scale-90 hover:scale-75 transition-all'
       src={USER_IMG}
       alt='user-icon'
       />

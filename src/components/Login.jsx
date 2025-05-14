@@ -108,9 +108,11 @@ const Login = () => {
     <div className=' w-full h-[890px] overflow-hidden'>
       <Header/>
       <div className='   h-full w-full relative flex  items-center justify-center'>
-        <img src={BG_IMG} alt='login-img'
-        className=' h-full w-full absolute -z-30'/>
-      
+       <img 
+    src={BG_IMG} 
+    alt='login-img'
+    className='absolute inset-0 w-full h-full object-cover -z-30'
+  />
        <form
        
        onSubmit={(e)=>e.preventDefault()}

@@ -1,4 +1,3 @@
-import React from 'react'
 import GptInput from './GptInput'
 import GptMovieSuggestion from './GptMovieSuggestion'
 import { BG_IMG } from '../utils/constants'
@@ -7,11 +6,15 @@ const GptSearch = () => {
   return (
     <div className='  w-full'>
         <div className=' absolute -z-20 w-full' >
-          <div className=' w-full  bg-black  absolute opacity-40'></div>
-            <img 
-            className=' w-full min-h-screen'
-            src={BG_IMG}
-            />
+           <div className="fixed inset-0 -z-20">
+        <img
+          src={BG_IMG}
+          alt="background"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-black opacity-40"></div>
+      </div>
+
         </div>
         <GptInput/>
         <GptMovieSuggestion/>
