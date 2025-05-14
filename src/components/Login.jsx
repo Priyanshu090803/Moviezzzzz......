@@ -107,7 +107,7 @@ const Login = () => {
   return (
     <div className=' w-full h-[890px] overflow-hidden'>
       <Header/>
-      <div className='   h-full w-full relative flex  items-center justify-center'>
+      <div className='   h-full w-full relative flex  items-center justify-center px-4'>
        <img 
     src={BG_IMG} 
     alt='login-img'
@@ -140,7 +140,7 @@ const Login = () => {
      
        ref={email}        // ref diya hua h yha email k liye
                              
-        placeholder='Email or mobile number'
+        placeholder='Email'
         className=' text-gray-400 backdrop-blur font-semibold  border border-white h-14 rounded-md px-5'
         />
         <input type='password'

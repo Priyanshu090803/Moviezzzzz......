@@ -8,7 +8,7 @@ export const doValidation =(email ,password,firstName,lastName)=>{
     if (!isCorrectFName) return "First Name is not valid"
     if(!isCorrectLName) return "Last name is not valid"
     if (!isEmailValid) return "Email is not valid";
-    if (!isPasswordValid) return "Password is not valid";
+    if (!isPasswordValid) return "Password is not valid or Try to use strong password: eg[@,#,number,capital Letter]";
   
 
     return null;
