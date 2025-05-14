@@ -26,7 +26,7 @@ const MovieList = ({title,movies}) => {
            <motion.div
            transition={{delay:0.4}}
            ref={sliderRef} 
-           className=' flex items-center overflow-x-scroll  overflow-y-hidden  w-[98%] scrollbar-hide   ease-out transition-all delay-100 duration-300 '>
+           className=' flex items-center overflow-x-scroll  overflow-y-hidden  w-[98%] scrollbar-hide  ease-out transition-all delay-100 duration-300 '>
             
             <div className=' flex ' >
             {

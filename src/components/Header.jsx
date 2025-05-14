@@ -80,7 +80,7 @@ const Header = () => {
 
   return (
     <div className=' z-50 absolute h-26 w-full md:px-20 px-3 py-5 bg-gradient-to-b from-black flex justify-between items-center'>
-      <img className=' w-20 sm:w-26 h-full md:w-20 md:ml-20 ml-6 mt-4 transition transform motion-reduce:transition-none motion-reduce:transform-none hover:scale-90 hover:opacity-80'
+      <img className=' w-20 sm:w-26 h-10 md:w-24 md:ml-20 ml-6  transition transform motion-reduce:transition-none motion-reduce:transform-none hover:scale-90 opacity-80 hover:opacity-50'
        src={LOGO} alt='logo'/>
     {user && <div className=' flex gap-1 items-center'>
       {showGptSearch&&<select 
