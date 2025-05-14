@@ -1,15 +1,8 @@
 
 @import "tailwindcss";
-@config "../../tailwind.config.js";
-/* Hide scrollbar but keep functionality */
-.scrollbar-hide::-webkit-scrollbar {
-    display: none;
-  }
-  .scrollbar-hide {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
-  .disable-select {
+@config "../tailwind.config.js"; /* Updated path */
+
+.disable-select {
   user-select: none; /* Standard */
   -webkit-user-select: none; /* Safari */
   -moz-user-select: none; /* Firefox */
