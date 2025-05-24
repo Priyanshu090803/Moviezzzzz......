@@ -5,10 +5,10 @@ import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { motion } from 'motion/react';
 import { button } from 'motion/react-client';
-import { addUser, removeUser } from '../utils/userSlice'
-import { LOGO, SUPPORTED_LANGUAGES, USER_IMG } from '../utils/constants';
-import { toggleGptSearchView } from '../utils/gptSlice';
-import { changeLanguage } from '../utils/configSlice';
+import { addUser, removeUser } from '../utils/userSlice.jsx'
+import { LOGO, SUPPORTED_LANGUAGES, USER_IMG } from '../utils/constants.jsx';
+import { toggleGptSearchView } from '../utils/gptSlice.jsx';
+import { changeLanguage } from '../utils/configSlice.jsx';
 
 const Header = () => {
   const navigate = useNavigate()

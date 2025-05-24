@@ -1,5 +1,5 @@
-import GptInput from './GptInput'
-import GptMovieSuggestion from './GptMovieSuggestion'
+import GptInput from './GptInput.jsx'
+import GptMovieSuggestion from './GptMovieSuggestion.jsx'
 import { BG_IMG } from '../utils/constants'
 
 const GptSearch = () => {

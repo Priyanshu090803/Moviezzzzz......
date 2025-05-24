@@ -1,5 +1,5 @@
 import React from 'react'
-import { IMG_CDN_URL } from '../utils/constants'
+import { IMG_CDN_URL } from '../utils/constants.jsx'
 import { motion } from 'motion/react'
 
 const MovieCard = ({poster_path}) => {

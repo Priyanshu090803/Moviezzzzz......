@@ -1,5 +1,5 @@
 import React, { useRef } from 'react'
-import MovieCard from './MovieCard'
+import MovieCard from './MovieCard.jsx'
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import { motion } from 'motion/react';
 

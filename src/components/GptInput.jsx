@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux'
-import lang from '../utils/languageConstants'
+import lang from '../utils/languageConstants.jsx'
 import { useRef } from 'react'
 import {geminiAi} from '../utils/geminiAi'
 import { API_OPTIONS } from '../utils/constants'

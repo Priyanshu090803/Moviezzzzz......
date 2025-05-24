@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
-import Login from './Login'
-import Browse from './Browse'
+import Login from './Login.jsx'
+import Browse from './Browse.jsx'
 import { createBrowserRouter } from 'react-router-dom'
 import { RouterProvider } from 'react-router-dom'  // for providing routing
 

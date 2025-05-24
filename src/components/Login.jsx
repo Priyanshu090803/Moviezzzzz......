@@ -1,10 +1,10 @@
 import React, {  useRef, useState } from 'react'
-import Header from './Header'
-import {doValidation} from "../utils/Validate"
+import Header from './Header.jsx'
+import {doValidation} from "../utils/Validate.jsx"
 import {auth} from "../utils/firebase"         // auth ko laenge  bar bar bnane se achha ek jgh bna k import kro
 import { createUserWithEmailAndPassword,signInWithEmailAndPassword, updateProfile  } from "firebase/auth";
 import { useDispatch } from 'react-redux';
-import { USER_IMG ,BG_IMG } from '../utils/constants';
+import { USER_IMG ,BG_IMG } from '../utils/constants.jsx';
 
 
 const Login = () => {
